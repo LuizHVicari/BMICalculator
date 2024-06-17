@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
 
         android:hint="175"
-        android:inputType="number"
+        android:inputType="numberDecimal"
 
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp"
