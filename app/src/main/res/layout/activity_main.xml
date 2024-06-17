@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Peso (em kg): "
+        android:text="@string/weight_ph"
 
         android:padding="16dp"
         android:layout_marginTop="50dp"
@@ -26,13 +26,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:hint="80.0"
+        android:hint="@string/weight_hint"
         android:inputType="numberDecimal"
 
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp"
         android:layout_marginTop="50dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
 
         app:layout_constraintStart_toStartOf="@id/etHeight"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Altura (em metros): "
+        android:text="@string/height_ph"
 
         android:padding="16dp"
 
@@ -59,12 +59,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:hint="175"
+        android:hint="@string/height_hint"
         android:inputType="numberDecimal"
 
         android:paddingHorizontal="16dp"
         android:paddingVertical="12dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
 
         app:layout_constraintStart_toEndOf="@id/tvHeight"
         app:layout_constraintTop_toBottomOf="@id/etWeight"
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Seu IMC:"
+        android:text="@string/pmi"
 
         android:padding="16dp"
 
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="0.0"
+        android:text="@string/value"
 
         android:padding="16dp"
 
@@ -113,7 +113,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
 
-            android:text="Calcular"
+            android:text="@string/calculate"
 
             app:layout_constraintStart_toStartOf="@id/tvResult"
             app:layout_constraintTop_toBottomOf="@id/tvResult" />
@@ -133,7 +133,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
 
-            android:text="Limpar"
+            android:text="@string/clear"
 
             app:layout_constraintStart_toEndOf="@id/space1"
             app:layout_constraintTop_toTopOf="@id/btCalculate"/>

@@ -6,6 +6,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.NumberFormat
+import java.util.Locale
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
@@ -44,27 +46,29 @@ class MainActivity : AppCompatActivity() {
     private fun btClearOnClick() {
         etWeight.setText("")
         etHeight.setText("")
-        tvResult.text = "0.0"
+        tvResult.text = getString(R.string.value)
         etWeight.requestFocus()
-        Toast.makeText(this, "Tela limpa", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.restart_screen), Toast.LENGTH_SHORT).show()
     }
 
-    private fun  validateFieldNotEmpty(field : EditText): Boolean {
+    private fun validateFieldNotEmpty(field : EditText): Boolean {
         if (field.text.toString().isEmpty()) {
-            field.error = "Esse campo não pode ser vazio"
+            field.error = getString(R.string.not_null_field)
             field.requestFocus()
             return false
         }
         return true
     }
 
+
     private fun btCalculateOnClick() {
         if (validateFieldNotEmpty(etWeight) and validateFieldNotEmpty(etHeight)) {
             val weight = etWeight.text.toString().toDouble()
             val height = etHeight.text.toString().toDouble()
-            val imc = weight / height.pow(2)
+            var bmi = weight / height.pow(2)
+            bmi *= if (!Locale.getDefault().equals("en")) 1 else 703
 
-            tvResult.text = "%.2f".format(imc)
+            tvResult.text = NumberFormat.getNumberInstance(Locale.getDefault()).format(bmi)
         }
     }
 }
